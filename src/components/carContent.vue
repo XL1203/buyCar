@@ -1,11 +1,11 @@
 <template>
   <section id="content">
     <div class="item" v-for="item in shopping" :key="item.id">
-      <img src="item.img" />
+      <img :src="item.img" />
       <div class="name">{{item.name}}</div>
       <div class="change">
         <button @click.prevent="sub(item.id)">-</button>
-        <input class="ipt" type="text" :value="item.num" @blur="changeNum(item.id,$event)"/>
+        <input class="ipt" type="text" :value="item.num" @blur="changeNum(item.id,$event)" />
         <button @click.prevent="add(item.id)">+</button>
       </div>
       <div class="del" @click.prevent="del(item.id)">x</div>
@@ -18,33 +18,33 @@ export default {
   props: ["list"],
   data() {
     return {
-        shopping:this.list
-    }
+      shopping: this.list
+    };
   },
-  methods:{
-      sub(id){
-          this.$emit('change-num',{
-              type:'sub',
-              id:id
-          })
-      },
-      add(id){
-           this.$emit('change-num',{
-              type:'add',
-              id:id
-          })
-      },
-      changeNum(id,params){
-          this.$emit('change-num',{
-              id:id,
-              type:'change',
-              num:params.target.value
-          })
-      },
-      del(id){
-          this.$emit('car-del',id)
-      }
-  }
+  methods: {
+    sub(id) {
+      this.$emit("change-num", {
+        type: "sub",
+        id: id,
+      });
+    },
+    add(id) {
+      this.$emit("change-num", {
+        type: "add",
+        id: id,
+      });
+    },
+    changeNum(id, params) {
+      this.$emit("change-num", {
+        id: id,
+        type: "change",
+        num: params.target.value,
+      });
+    },
+    del(id) {
+      this.$emit("car-del", id);
+    },
+  },
 };
 </script>
 

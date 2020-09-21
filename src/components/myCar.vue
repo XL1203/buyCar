@@ -6,7 +6,6 @@
   </div>
 </template>
 
-
 <script>
 import carTittle from "./carTittle";
 import carContent from "./carContent";
@@ -22,35 +21,35 @@ export default {
           name: "TCL彩电",
           price: 1000,
           num: 1,
-          pic: "../assets/images/a.jpg",
+          img: require("../assets/images/a.jpg")
         },
         {
           id: 2,
           name: "机顶盒",
           price: 1000,
           num: 1,
-          img: "../assets/images/b.jpg",
+          img: require("../assets/images/b.jpg")
         },
         {
           id: 3,
           name: "海尔冰箱",
           price: 1000,
           num: 1,
-          img: "../assets/images/c.jpg",
+          img: require("../assets/images/c.jpg"),
         },
         {
           id: 4,
           name: "小米手机",
           price: 1000,
           num: 1,
-          img: "../assets/images/d.jpg",
+          img: require("../assets/images/d.jpg"),
         },
         {
           id: 5,
           name: "PPTV电视",
           price: 1000,
           num: 1,
-          img: "../assets/images/e.jpg",
+          img: require("../assets/images/e.jpg"),
         },
       ],
     };
